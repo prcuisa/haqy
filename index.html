@@ -1,723 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dapur Nusantara - Sajian Hangat dari Hati</title>
-
-    <!-- Google Fonts: Playfair Display & Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome untuk Ikon -->
+    <title>CV - Haqy Pratama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        /* --- GAYA UMUM & VARIABEL --- */
-        
-         :root {
-            --primary-color: #5D4037;
-            /* Cokelat Tua (Kayu) */
-            --secondary-color: #4CAF50;
-            /* Hijau Daun */
-            --accent-color: #FF5722;
-            /* Jingga/Merah Cabai */
-            --text-color: #333333;
-            --light-bg: #F5F5F5;
-            --white-color: #FFFFFF;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--white-color);
-        }
-        
-        h1,
-        h2,
-        h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 2.5rem;
-        }
-        /* --- NAVIGASI --- */
-        
-        .navbar {
-            background: rgba(93, 64, 55, 0.95);
-            color: var(--white-color);
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            transition: background 0.3s ease;
-        }
-        
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .navbar .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            color: var(--white-color);
-            text-decoration: none;
-        }
-        
-        .navbar .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .navbar .nav-links a {
-            color: var(--white-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .navbar .nav-links a:hover {
-            color: var(--accent-color);
-        }
-        
-        .menu-toggle {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        /* --- HERO SECTION --- */
-        
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1937&auto=format&fit=crop') no-repeat center center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white-color);
-        }
-        
-        .hero-content h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            color: var(--white-color);
-        }
-        
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--accent-color);
-            color: var(--white-color);
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin: 5px;
-        }
-        
-        .btn:hover {
-            background-color: #E64A19;
-            transform: translateY(-2px);
-        }
-        
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid var(--white-color);
-        }
-        
-        .btn-secondary:hover {
-            background-color: var(--white-color);
-            color: var(--primary-color);
-        }
-        /* --- MENU UNGGULAN --- */
-        
-        .featured-menu {
-            background-color: var(--light-bg);
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .menu-card {
-            background: var(--white-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .menu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .menu-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .menu-card-content {
-            padding: 20px;
-        }
-        
-        .menu-card-content h3 {
-            margin-bottom: 10px;
-            font-size: 1.5rem;
-        }
-        
-        .menu-card-content p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-        
-        .menu-card-content .price {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-        /* --- MENGAPA MEMILIH KAMI --- */
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        
-        .feature-item i {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .feature-item h3 {
-            margin-bottom: 10px;
-        }
-        /* --- TESTIMONI --- */
-        
-        .testimonials {
-            background-color: var(--light-bg);
-        }
-        
-        .testimonial-card {
-            background: var(--white-color);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            font-style: italic;
-            text-align: center;
-        }
-        
-        .testimonial-card p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .testimonial-card h4 {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        /* --- HALAMAN MENU LENGKAP --- */
-        
-        .filter-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            border: 1px solid var(--primary-color);
-            background: transparent;
-            color: var(--primary-color);
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-        }
-        
-        .menu-item {
-            display: none;
-            /* Sembunyikan semua item secara default */
-        }
-        
-        .menu-item.show {
-            display: block;
-            /* Tampilkan item yang aktif */
-        }
-        /* --- TENTANG KAMI --- */
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .about-content img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        /* --- KONTAK & LOKASI --- */
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-        
-        .contact-info h3,
-        .contact-form h3 {
-            margin-bottom: 20px;
-        }
-        
-        .contact-info p {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-info i {
-            color: var(--secondary-color);
-            width: 20px;
-        }
-        
-        .contact-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .contact-form button {
-            border: none;
-            cursor: pointer;
-        }
-        
-        .map-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #777;
-            margin-top: 20px;
-        }
-        /* --- FOOTER --- */
-        
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        .footer .social-links a {
-            color: var(--white-color);
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s ease;
-        }
-        
-        .footer .social-links a:hover {
-            color: var(--accent-color);
-        }
-        /* --- RESPONSIVE --- */
-        
-        @media (max-width: 768px) {
-            .navbar .nav-links {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--primary-color);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                display: none;
-                /* Sembunyikan di desktop */
-            }
-            .navbar .nav-links.active {
-                display: flex;
-                /* Tampilkan saat toggle di-klik */
-            }
-            .menu-toggle {
-                display: block;
-                /* Tampilkan tombol menu di HP */
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
-
-<body>
-
-    <!-- ==================== NAVIGASI ==================== -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#beranda" class="logo">Dapur Nusantara</a>
-            <ul class="nav-links">
-                <li><a href="#beranda">Beranda</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#tentang">Tentang</a></li>
-                <li><a href="#kontak">Kontak</a></li>
-            </ul>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
-    <main>
-        <!-- ==================== HERO SECTION ==================== -->
-        <header id="beranda" class="hero">
-            <div class="hero-content">
-                <h1>Dapur Nusantara</h1>
-                <p>Sajian Hangat dari Hati, Resep Asli dari Dapur Ibu</p>
-                <a href="#menu" class="btn">Lihat Menu Kami</a>
-                <a href="#kontak" class="btn btn-secondary">Pesan Meja</a>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <div class="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden">
+        <!-- Header -->
+        <header class="bg-blue-700 text-white p-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div>
+                    <h1 class="text-3xl font-bold">Haqy Pratama</h1>
+                    <p class="text-blue-100 mt-1">Jakarta Selatan, Jakarta Raya, Indonesia</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <a href="www.linkedin.com/in/haqypratama" class="flex items-center text-white hover:text-blue-200">
+                        <i class="fab fa-linkedin mr-2"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
             </div>
         </header>
 
-        <!-- ==================== MENU UNGGULAN ==================== -->
-        <section id="featured" class="featured-menu">
-            <div class="container">
-                <h2 class="section-title">Menu Unggulan Kami</h2>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=500&auto=format&fit=crop" alt="Nasi Rames Komplit">
-                        <div class="menu-card-content">
-                            <h3>Nasi Rames Komplit</h3>
-                            <p>Perpaduan nasi hangat dengan ayam bakar, urap, tempe, dan sambal terasi.</p>
-                            <span class="price">Rp 45.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=500&auto=format&fit=crop" alt="Rawon Daging">
-                        <div class="menu-card-content">
-                            <h3>Rawon Daging Sapi</h3>
-                            <p>Kuah hitam pekat khas Jawa Timur dengan daging sapi empuk dan taoge segar.</p>
-                            <span class="price">Rp 100.000</span>
-                        </div>
-                    </div>
-                    <div class="menu-card">
-                        <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?q=80&w=500&auto=format&fit=crop" alt="Pecel Lele">
-                        <div class="menu-card-content">
-                            <h3>Pecel Lele Krispi</h3>
-                            <p>Lele goreng krispi dengan sambal pedas mantab dan lalapan segar.</p>
-                            <span class="price">Rp 35.000</span>
-                        </div>
-                    </div>
-
-                    <div class="menu-card">
-                        <img src="https://github.com/prcuisa/mainpage/blob/main/ecsa.jpg?raw=true" alt="Pecel Lele">
-                        <div class="menu-card-content">
-                            <h3>Pecel Lele Krispi</h3>
-                            <p>Lele goreng krispi dengan sambal pedas mantab dan lalapan segar.</p>
-                            <span class="price">Rp 35.000</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== MENGAPA MEMILIH KAMI ==================== -->
-        <section id="why-us" class="section">
-            <div class="container">
-                <h2 class="section-title">Mengapa Memilih Kami?</h2>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Resep Tradisional</h3>
-                        <p>Diwariskan secara turun-temurun, menjaga keaslian rasa masakan Nusantara.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-pepper-hot"></i>
-                        <h3>Bumbu Pilihan</h3>
-                        <p>Hanya menggunakan rempah-rempah berkualitas tinggi untuk cita rasa terbaik.</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-heart"></i>
-                        <h3>Dimasak dengan Cinta</h3>
-                        <p>Setiap hidangan adalah karya yang dibuat dengan sepenuh hati untuk Anda.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== TESTIMONI ==================== -->
-        <section class="testimonials section">
-            <div class="container">
-                <h2 class="section-title">Apa Kata Mereka?</h2>
-                <div class="testimonial-card">
-                    <p>"Rasanya seperti makan masakan rumah sendiri! Sangat autentik dan porsinya mengenyangkan. Tempatnya juga nyaman dan bikin betah."</p>
-                    <h4>- Rina, 28 Tahun</h4>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== MENU LENGKAP ==================== -->
-        <section id="menu" class="section">
-            <div class="container">
-                <h2 class="section-title">Menu Lengkap</h2>
-
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">Semua</button>
-                    <button class="filter-btn" data-filter="makanan">Makanan</button>
-                    <button class="filter-btn" data-filter="minuman">Minuman</button>
-                </div>
-
-                <div class="menu-grid">
-                    <!-- Item Makanan -->
-                    <div class="menu-item show" data-category="makanan">
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=500&auto=format&fit=crop" alt="Ayam Bakar Taliwang">
-                            <div class="menu-card-content">
-                                <h3>Ayam Bakar Taliwang</h3>
-                                <p>Ayam pilihan dibakar dengan bumbu khas Lombok, pedas, manis, dan gurih.</p>
-                                <span class="price">Rp 50.000</span>
+        <!-- Main Content -->
+        <main class="p-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Left Column -->
+                <div class="md:col-span-1">
+                    <!-- Contact -->
+                    <section class="mb-6">
+                        <h2 class="text-xl font-semibold text-blue-700 mb-3 pb-2 border-b border-blue-200">Kontak</h2>
+                        <div class="space-y-2">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-2"></i>
+                                <span>Jakarta Selatan, Jakarta Raya, Indonesia</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fab fa-linkedin text-blue-600 mt-1 mr-2"></i>
+                                <a href="www.linkedin.com/in/haqypratama" class="text-blue-600 hover:underline">www.linkedin.com/in/haqypratama</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="menu-item show" data-category="makanan">
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=500&auto=format&fit=crop" alt="Gado-Gado">
-                            <div class="menu-card-content">
-                                <h3>Gado-Gado Jakarta</h3>
-                                <p>Sayuran segar dengan bumbu kacang legit dan gurih, dilengkapi kerupuk.</p>
-                                <span class="price">Rp 30.000</span>
-                            </div>
+                    </section>
+
+                    <!-- Skills -->
+                    <section class="mb-6">
+                        <h2 class="text-xl font-semibold text-blue-700 mb-3 pb-2 border-b border-blue-200">Keahlian Teratas</h2>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Bantuan Administratif</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Negosiasi</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Manajemen Proyek</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- Education -->
+                    <section>
+                        <h2 class="text-xl font-semibold text-blue-700 mb-3 pb-2 border-b border-blue-200">Pendidikan</h2>
+                        <div class="mb-4">
+                            <h3 class="font-semibold">Universitas Muhammadiyah Jakarta</h3>
+                            <p class="text-gray-600">Gelar Sarjana, Manajemen Operasi</p>
+                            <p class="text-sm text-gray-500">September 2019 - November 2023</p>
                         </div>
-                    </div>
-                    <!-- Item Minuman -->
-                    <div class="menu-item show" data-category="minuman">
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1534163996866-32e9300b839b?q=80&w=500&auto=format&fit=crop" alt="Es Teh Manis">
-                            <div class="menu-card-content">
-                                <h3>Es Teh Manis</h3>
-                                <p>Kesegaran teh manis khas Indonesia, teman sempurna setiap hidangan.</p>
-                                <span class="price">Rp 8.000</span>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="md:col-span-2">
+                    <!-- Experience -->
+                    <section>
+                        <h2 class="text-xl font-semibold text-blue-700 mb-3 pb-2 border-b border-blue-200">Pengalaman</h2>
+                        
+                        <!-- Experience 1 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">DPP Bidang Ekonomi Kreatif dan Digital Partai Perindo</h3>
+                                <span class="text-blue-600 font-medium">Februari 2024 - April 2024 (3 bulan)</span>
                             </div>
+                            <p class="text-gray-600 mb-1">Document Clerk</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Pusat, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Melakukan penginputan data dan dokumen terhadap suara calon</li>
+                                <li>Merekap dan melaporkan data yang tidak valid</li>
+                                <li>Memastikan perhitungan suara sesuai dengan data yang terdata di bawaslu</li>
+                            </ul>
                         </div>
-                    </div>
-                    <div class="menu-item show" data-category="minuman">
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=500&auto=format&fit=crop" alt="Es Campur">
-                            <div class="menu-card-content">
-                                <h3>Es Campur</h3>
-                                <p>Campuran buah segar, cincau, kelapa muda, dengan sirup dan susu.</p>
-                                <span class="price">Rp 20.000</span>
+
+                        <!-- Experience 2 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">PT. Bina Mahasiswa Indonesia</h3>
+                                <span class="text-blue-600 font-medium">September 2023 - Oktober 2023 (2 bulan)</span>
                             </div>
+                            <p class="text-gray-600 mb-1">Coordinator Event & Production</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Timur, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Menjadi coordinator volunteer, event & produksi</li>
+                                <li>Merekrut dan menjadwalkan interview kepada kandidat volunteer</li>
+                                <li>Mengawasi produksian, serta berkomunikasi dengan vendor</li>
+                                <li>Membuat perizinan event kepada pihak berwajib</li>
+                            </ul>
                         </div>
-                    </div>
+
+                        <!-- Experience 3 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">Persatuan Sepakbola Seluruh Indonesia</h3>
+                                <span class="text-blue-600 font-medium">Juni 2023 - Juni 2023 (1 bulan)</span>
+                            </div>
+                            <p class="text-gray-600 mb-1">Volunteer Staff</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Selatan, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Membantu mensukseskan event internasional FIFA MATCHDAY INDONESIA VS ARGENTINA</li>
+                                <li>Menjadi runner event produksi yang mengawasi produksian vendor</li>
+                                <li>Memberitahu vendor terkait produksian</li>
+                                <li>Membuat laporan terkait loading in & loading out</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 4 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">PT. Republika Media Mandiri</h3>
+                                <span class="text-blue-600 font-medium">November 2022 - Desember 2022 (2 bulan)</span>
+                            </div>
+                            <p class="text-gray-600 mb-1">Intern</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Selatan, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Membantu divisi event & promosi dalam melakukan event ASR (Anugrah Syariah Republika) sebelum dan sesudah event</li>
+                                <li>Membantu mencari venue untuk event ASR</li>
+                                <li>Membantu menyiapkan segala kebutuhan event</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 5 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">Indonesia Basketball Festival</h3>
+                                <span class="text-blue-600 font-medium">Juni 2022 - Juni 2022 (1 bulan)</span>
+                            </div>
+                            <p class="text-gray-600 mb-1">Intern</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Selatan, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Menjadi LO Talent, memberitahu talent tentang rundown acara dan menyiapkan kebutuhan yang dibutuhkan oleh talent</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 6 -->
+                        <div class="mb-6">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-start">
+                                <h3 class="font-semibold text-lg">PT Bina Mahasiswa Indonesia</h3>
+                                <span class="text-blue-600 font-medium">November 2021 - Desember 2021 (2 bulan)</span>
+                            </div>
+                            <p class="text-gray-600 mb-1">Intern</p>
+                            <p class="text-gray-500 text-sm mb-2">Jakarta Selatan, Jakarta Raya, Indonesia</p>
+                            <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                                <li>Membantu anggota pertandingan dalam menyiapkan pertandingan</li>
+                                <li>Menjadi time keeper agar waktu sesuai dengan jadwal live</li>
+                                <li>Membantu membuat rundown acara kegiatan</li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             </div>
-        </section>
+        </main>
 
-        <!-- ==================== TENTANG KAMI ==================== -->
-        <section id="tentang" class="section">
-            <div class="container">
-                <h2 class="section-title">Tentang Dapur Nusantara</h2>
-                <div class="about-content">
-                    <div>
-                        <h3>Lebih dari Sekadar Restoran, Ini adalah Rumah</h3>
-                        <p>Berawal dari dapur kecil di rumah Ibu Ani, resep-resep ini telah memanjakan keluarga kami selama tiga generasi. Aroma rempah yang menyeruak dari panci dan kehangatan santapan di meja makan adalah kenangan indah masa kecil kami.</p>
-                        <p>Kini, melalui Dapur Nusantara, kami ingin berbagi kehangatan, kelezatan, dan sejuta cerita di balik setiap masakan ini dengan Anda. Setiap suapan adalah sebuah perjalanan ke berbagai penjuru nusantara, disajikan dengan cinta.</p>
-                    </div>
-                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=500&auto=format&fit=crop" alt="Dapur Tradisional">
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== KONTAK & LOKASI ==================== -->
-        <section id="kontak" class="section">
-            <div class="container">
-                <h2 class="section-title">Temukan & Hubungi Kami</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Informasi Kontak</h3>
-                        <!-- GANTI dengan informasi restoranmu -->
-                        <p><i class="fas fa-map-marker-alt"></i> Jl. Kampung Rasa No. 123, Jakarta Selatan</p>
-                        <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
-                        <p><i class="fas fa-envelope"></i> halo@dapurnusantara.id</p>
-                        <p><i class="fas fa-clock"></i> Senin - Jumat: 11.00 - 22.00</p>
-                        <p><i class="fas fa-clock"></i> Sabtu - Minggu: 10.00 - 23.00</p>
-
-                        <h3 style="margin-top: 30px;">Pesan Meja</h3>
-                        <p>Anda juga bisa reservasi via telepon. Kami siap menyambut Anda!</p>
-                    </div>
-                    <div class="contact-form">
-                        <h3>Hubungi Kami Online</h3>
-                        <form action="#" method="post">
-                            <input type="text" name="name" placeholder="Nama Lengkap" required>
-                            <input type="email" name="email" placeholder="Email Anda" required>
-                            <textarea name="message" rows="5" placeholder="Pesan Anda (misal: reservasi untuk 4 orang)" required></textarea>
-                            <button type="submit" class="btn">Kirim Pesan</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="map-placeholder">
-                    <!-- GANTI dengan embed Google Maps restoranmu -->
-                    <p><i class="fas fa-map-marked-alt"></i> Peta Lokasi (Embed Google Maps di sini)</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <div class="social-links">
-                <!-- GANTI dengan link media sosialmu -->
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-            </div>
-            <p style="margin-top: 20px;">&copy; 2024 Dapur Nusantara. Hak Cipta Dilindungi.</p>
-        </div>
-    </footer>
-
-    <!-- ==================== JAVASCRIPT ==================== -->
-    <script>
-        // --- Toggle Menu untuk Mobile ---
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // --- Filter Menu ---
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const menuItems = document.querySelectorAll('.menu-item');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Hapus class 'active' dari semua tombol
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Tambahkan class 'active' ke tombol yang diklik
-                button.classList.add('active');
-
-                const filterValue = button.getAttribute('data-filter');
-
-                menuItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block'; // Tampilkan item
-                        // Gunakan animasi fade-in sederhana
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        // Sembunyikan item setelah animasi
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-
-        // --- Highlight Navigasi Saat Scroll ---
-        const sections = document.querySelectorAll('section');
-        const navLi = document.querySelectorAll('.navbar .nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLi.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href').slice(1) === current) {
-                    a.style.color = 'var(--accent-color)'; // Ganti warna link aktif
-                } else {
-                    a.style.color = 'var(--white-color)'; // Kembalikan warna default
-                }
-            });
-        });
-    </script>
-
+        <!-- Footer -->
+        <footer class="bg-gray-100 text-center p-4 text-gray-600 text-sm">
+            <p>CV Haqy Pratama - Terakhir diperbarui: Juni 2024</p>
+        </footer>
+    </div>
 </body>
-
 </html>
